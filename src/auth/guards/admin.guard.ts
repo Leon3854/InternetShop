@@ -7,7 +7,7 @@ import {
 import { User } from '@prisma/client'
 
 @Injectable()
-export class onlyAdminGuard implements CanActivate {
+export class OnlyAdminGuard implements CanActivate {
   canActivate(context: ExecutionContext): boolean {
     const request = context.switchToHttp().getRequest<{ user: User }>()
     const user = request.user
